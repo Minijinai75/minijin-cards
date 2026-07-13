@@ -1,18 +1,18 @@
 # minijin-cards — Minijin 的酒館角色卡發佈架
 
-> **匯入網址請用上表的 raw.githubusercontent.com 連結**——它在酒館的預設白名單裡，貼上就能匯入／更新，免任何設定。（酒館的網址匯入採白名單制，其他網域會回 Not Found。）
+> **貼進酒館的網址請用 PNG 那欄**——酒館的網址直連匯入只吃 PNG（裸 JSON 會報 Unsupported file type）；raw.githubusercontent.com 在酒館預設白名單內，免設定直接通。JSON 欄留給「下載後用 Replace/Update 上傳」的手動路。
 > 網址用英文檔名（中文檔名在 Discord 貼連結會被切斷）。中文檔名版本仍在倉內，內容相同。
 > 這裡放的永遠是**最新版**的卡。網址固定不變——收藏一次，之後每次更新都從同一個網址拿。
 > 卡片版本號寫在卡片裡（酒館的角色卡資訊面板可以看 `character_version`），檔名不帶版本號。
 
 ## 卡片清單
 
-| 卡片 | 檔案 | 說明 |
-|---|---|---|
-| 何思年（全時期 MVU 版） | [`hsn-full.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-full.json) | 童年／學生／成年三線，變數卡。需要酒館助手＋ST-Prompt-Template |
-| 何思年（一般版） | [`hsn-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-simple.json) | 免變數框架的輕量版。需要酒館助手 |
-| 石睿（MVU 版） | [`shirui-mvu.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-mvu.json) | 變數卡。需要酒館助手＋ST-Prompt-Template |
-| 石睿（一般版） | [`shirui-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-simple.json) | 輕量版。需要酒館助手 |
+| 卡片 | 匯入網址（PNG） | 手動替換用 JSON | 說明 |
+|---|---|---|---|
+| 何思年（全時期 MVU 版） | [`hsn-full.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-full.png) | [`hsn-full.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-full.json) | 童年／學生／成年三線，變數卡。需要酒館助手＋ST-Prompt-Template |
+| 何思年（一般版） | [`hsn-simple.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-simple.png) | [`hsn-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-simple.json) | 免變數框架的輕量版。需要酒館助手 |
+| 石睿（MVU 版） | [`shirui-mvu.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-mvu.png) | [`shirui-mvu.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-mvu.json) | 變數卡。需要酒館助手＋ST-Prompt-Template |
+| 石睿（一般版） | [`shirui-simple.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-simple.png) | [`shirui-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-simple.json) | 輕量版。需要酒館助手 |
 
 > 角色原作：殭殭（授權 MINI 製作）／石睿為原創。
 
