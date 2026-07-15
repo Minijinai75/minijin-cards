@@ -14,7 +14,7 @@
 | 石睿（MVU 版） | [`shirui-mvu.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-mvu.png) | [`shirui-mvu.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-mvu.json) | 變數卡。需要酒館助手＋ST-Prompt-Template |
 | 石睿（一般版） | [`shirui-simple.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-simple.png) | [`shirui-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-simple.json) | 輕量版。需要酒館助手 |
 
-> 角色原作：殭殭（授權 MINI 製作）／石睿為原創。
+> 角色原作：殭殭（授權 MINI 製作）。
 
 ## 首次匯入
 
