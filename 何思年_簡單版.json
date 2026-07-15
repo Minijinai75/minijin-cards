@@ -217,6 +217,23 @@
               "data": true,
               "button": true
             }
+          },
+          {
+            "type": "script",
+            "enabled": true,
+            "name": "何思年_世界書切換",
+            "id": "hsn-worldbook-switch",
+            "content": "/* 何思年_世界書切換（簡單版） — 擴充面板時期切換按鈕\n   四個按鈕注入擴充面板，按下後把世界書切到對應時期。\n   大一＝波賽頓前（entry 25）、大二＝波賽頓時代（entry 26）。 */\n\n$(async function () {\n  var PROFILES = {\n    adult: {\n      label: \"成年線\",\n      enable: [3,6,10,12,13,15,16,19,21,22,23,24],\n      disable: [4,5,7,8,9,11,14,18,25,26]\n    },\n    year1: {\n      label: \"大一線（波賽頓前）\",\n      enable: [4,7,10,11,14,18,22,23,25],\n      disable: [3,5,6,8,9,12,13,15,16,19,21,24,26]\n    },\n    year2: {\n      label: \"大二線（波賽頓時代）\",\n      enable: [4,7,10,11,14,18,22,23,26],\n      disable: [3,5,6,8,9,12,13,15,16,19,21,24,25]\n    },\n    child: {\n      label: \"童年線\",\n      enable: [5,8,9],\n      disable: [0,3,4,6,7,10,11,12,13,14,15,16,18,19,21,22,23,24,25,26]\n    }\n  };\n\n  async function switchProfile(key) {\n    var p = PROFILES[key];\n    if (!p) return;\n\n    var wbName = null;\n    if (typeof TavernHelper !== 'undefined' && typeof TavernHelper.getCurrentCharPrimaryLorebook === 'function') {\n      wbName = await TavernHelper.getCurrentCharPrimaryLorebook();\n    }\n    if (!wbName && typeof getCharWorldbookNames === 'function') {\n      try { var n = await getCharWorldbookNames('current'); wbName = n && n.primary; } catch(_) {}\n    }\n    if (!wbName) { toastr.error('找不到角色的世界書', '切換失敗'); return; }\n\n    var enableSet = {}, disableSet = {};\n    p.enable.forEach(function(u) { enableSet[u] = true; });\n    p.disable.forEach(function(u) { disableSet[u] = true; });\n\n    var logs = [];\n    try {\n      var entries = await TavernHelper.getLorebookEntries(wbName);\n      var updates = [];\n      (entries || []).forEach(function(e) {\n        if (!enableSet[e.uid] && !disableSet[e.uid]) return;\n        var want = !!enableSet[e.uid];\n        updates.push({ uid: e.uid, enabled: want });\n        if (e.enabled !== want) {\n          logs.push((want ? '\\u2705' : '\\ud83d\\udeab') + ' ' + (e.comment || e.name || 'UID:' + e.uid));\n        }\n      });\n      if (updates.length > 0) await TavernHelper.setLorebookEntries(wbName, updates);\n    } catch(e) {\n      toastr.error('世界書寫入失敗：' + (e.message || e), '切換失敗');\n      return;\n    }\n\n    if (logs.length > 0) {\n      toastr.success(\n        '\\ud83d\\udcd6 已切換至' + p.label + '<br>' + logs.length + ' 個條目被修正<br><br>' + logs.join('<br>'),\n        '世界書切換完成', { timeOut: 5000, escapeHtml: false, preventDuplicates: true }\n      );\n    } else {\n      toastr.info(\n        '\\ud83d\\udcd6 ' + p.label + ' — 世界書狀態已正確，無需修改',\n        '世界書切換', { timeOut: 3000, preventDuplicates: true }\n      );\n    }\n  }\n\n  var container = $('<div>').attr('script_id', getScriptId());\n  container.html(\n    '<div class=\"inline-drawer\">' +\n      '<div class=\"inline-drawer-toggle inline-drawer-header\">' +\n        '<b>何思年 世界書切換</b>' +\n        '<div class=\"inline-drawer-icon fa-solid fa-circle-chevron-down down\"></div>' +\n      '</div>' +\n      '<div class=\"inline-drawer-content\">' +\n        '<p style=\"margin:5px 0;font-size:0.9em;opacity:0.7;\">匯入對話後世界書沒切到？按對應時期的按鈕復原。</p>' +\n        '<div style=\"display:flex;flex-wrap:wrap;gap:5px;margin:8px 0;\">' +\n          '<input id=\"hsn-btn-adult\" class=\"menu_button\" type=\"submit\" value=\"成年線\" />' +\n          '<input id=\"hsn-btn-year1\" class=\"menu_button\" type=\"submit\" value=\"大一線\" />' +\n          '<input id=\"hsn-btn-year2\" class=\"menu_button\" type=\"submit\" value=\"大二線\" />' +\n          '<input id=\"hsn-btn-child\" class=\"menu_button\" type=\"submit\" value=\"童年線\" />' +\n        '</div>' +\n      '</div>' +\n    '</div>'\n  );\n\n  $('#extensions_settings2').append(container);\n\n  container.find('#hsn-btn-adult').on('click', function() { switchProfile('adult'); });\n  container.find('#hsn-btn-year1').on('click', function() { switchProfile('year1'); });\n  container.find('#hsn-btn-year2').on('click', function() { switchProfile('year2'); });\n  container.find('#hsn-btn-child').on('click', function() { switchProfile('child'); });\n\n  console.log('[何思年_世界書切換] 擴充面板已注入');\n});",
+            "info": "",
+            "button": {
+              "enabled": true,
+              "buttons": []
+            },
+            "data": {},
+            "export_with": {
+              "data": true,
+              "button": true
+            }
           }
         ]
       },
