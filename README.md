@@ -13,6 +13,8 @@
 | 何思年（一般版） | [`hsn-simple.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-simple.png) | [`hsn-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/hsn-simple.json) | 免變數框架的輕量版。需要酒館助手 |
 | 石睿（MVU 版） | [`shirui-mvu.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-mvu.png) | [`shirui-mvu.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-mvu.json) | 變數卡。需要酒館助手＋ST-Prompt-Template |
 | 石睿（一般版） | [`shirui-simple.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-simple.png) | [`shirui-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/shirui-simple.json) | 輕量版。需要酒館助手 |
+| 姜南（MVU 版） | [`jiangnan-mvu.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/jiangnan-mvu.png) | [`jiangnan-mvu.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/jiangnan-mvu.json) | 變數卡。需要酒館助手＋ST-Prompt-Template |
+| 姜南（一般版） | [`jiangnan-simple.png`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/jiangnan-simple.png) | [`jiangnan-simple.json`](https://raw.githubusercontent.com/Minijinai75/minijin-cards/main/jiangnan-simple.json) | 輕量版。需要酒館助手 |
 
 > 角色原作：殭殭（授權 MINI 製作）。
 
